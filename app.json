@@ -1,7 +1,0 @@
-{
-  "name": "myblog-messenger-bot",
-  "description": "A simple messenger bot that suggests articles from my blog.",
-  "repository": "https://github.com/AravindVasudev/myblog-messenger-bot",
-  "logo": "/public/images/logo.png",
-  "keywords": ["aravindvasudevan.me", "messenger", "bot"]
-}
