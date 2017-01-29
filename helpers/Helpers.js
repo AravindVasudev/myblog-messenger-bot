@@ -23,14 +23,15 @@ module.exports = class Helpers {
       // and send back the example. Otherwise, just echo the text we received.
       switch (messageTextSmall) {
         case 'generic':
-          Helpers.sendTextMessage(senderID, 'hey, wierdo');
+
+          this.sendTextMessage(senderID, 'hey, wierdo');
           break;
 
         default:
-          Helpers.sendGenericMessage(senderID);
+          this.sendGenericMessage(senderID);
       }
     } else if (messageAttachments) {
-      Helpers.sendTextMessage(senderID, "Message with attachment received");
+      this.sendTextMessage(senderID, "Message with attachment received");
     }
   }
 
@@ -78,7 +79,7 @@ module.exports = class Helpers {
       }
     };
 
-    Helpers.callSendAPI(messageData);
+    this.callSendAPI(messageData);
   }
 
   static sendTextMessage(recipientId, messageText) {
@@ -92,7 +93,7 @@ module.exports = class Helpers {
       }
     };
 
-    Helpers.callSendAPI(messageData);
+    this.callSendAPI(messageData);
   }
 
   static callSendAPI(messageData) {
@@ -132,6 +133,6 @@ module.exports = class Helpers {
 
     // When a postback is called, we'll send a message back to the sender to
     // let them know it was successful
-    Helpers.sendTextMessage(senderID, "Postback called");
+    this.sendTextMessage(senderID, "Postback called");
   }
 }

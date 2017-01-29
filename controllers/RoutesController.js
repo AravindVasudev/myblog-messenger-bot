@@ -4,6 +4,7 @@
  */
 
  const Helpers = require('../helpers/Helpers');
+const request = require('request');
 
 let instance = null;
 
