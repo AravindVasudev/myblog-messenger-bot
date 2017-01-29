@@ -23,6 +23,7 @@ router.get('/webhook', function(req, res) {
 router.post('/webhook', function (req, res) {
   var data = req.body;
   console.log(req.body);
+  console.log(req.body.entry.messaging[0].message);
 
   // Make sure this is a page subscription
   if (data.object === 'page') {
