@@ -14,14 +14,14 @@ const app = express();
 const index = require('./routes/index');
 
 //Configs
-const DBConfig = require('./config/database.js');
+// const DBConfig = require('./config/database.js');
 
 //Mongoose Setup
-mongoose.connect(DBConfig.url);
-mongoose.Promise = global.Promise;
+// mongoose.connect(DBConfig.url);
+// mongoose.Promise = global.Promise;
 
 //Session Store
-const sessionStore = new MongoStore({ mongooseConnection: mongoose.connection });
+// const sessionStore = new MongoStore({ mongooseConnection: mongoose.connection });
 
 //Morgan
 app.use(logger('dev'));
@@ -33,10 +33,10 @@ app.use(cookieParser());
 
 //Session
 app.use(session({
-  secret: 'shamballa',
+  secret: process.env.SESSION_SECRET,
   saveUninitialized: true,
   resave: true,
-  store: sessionStore
+  // store: sessionStore
 }));
 
 //Static Directories
