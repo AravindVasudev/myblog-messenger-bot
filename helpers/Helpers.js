@@ -23,7 +23,7 @@ module.exports = class Helpers {
       // and send back the example. Otherwise, just echo the text we received.
       switch (messageTextSmall) {
         case 'generic':
-          this.sendMessage(senderID, 'hey, wierdo');
+          this.sendTextMessage(senderID, 'hey, wierdo');
           break;
 
         default:
@@ -96,6 +96,7 @@ module.exports = class Helpers {
   }
 
   static callSendAPI(messageData) {
+    console.log('SEND TEST MESSAGE IS CALLED!')
     request({
       uri: 'https://graph.facebook.com/v2.6/me/messages',
       qs: { access_token: process.env.FB_ACCESS_TOKEN },
