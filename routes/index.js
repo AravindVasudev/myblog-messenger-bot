@@ -1,8 +1,9 @@
+"use strict";
+
 const express          = require('express');
 const RoutesController = require('../controllers/RoutesController');
 const routes           = new RoutesController();
 const router           = express.Router();
-const request = require('request');
 
 /* GET home page. */
 router.get('/', routes.getIndex);
