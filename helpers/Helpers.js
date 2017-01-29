@@ -82,6 +82,7 @@ module.exports = class Helpers {
   }
 
   static sendTextMessage(recipientId, messageText) {
+    console.log('SEND TEST MESSAGE IS CALLED!')
     var messageData = {
       recipient: {
         id: recipientId
