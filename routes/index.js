@@ -69,7 +69,7 @@ router.get('/setpersistencemenu', (req, res) => {
     {
       type:"postback",
       title:"Random Article",
-      payload:"Random Article"
+      payload:"article"
     }
   ]
 }
@@ -127,7 +127,7 @@ function sendGenericMessage(recipientId) {
             {
               type:"postback",
               title:"Random Article",
-              payload:"USER_DEFINED_PAYLOAD"
+              payload:"article"
             }
           ]
         }
