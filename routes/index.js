@@ -56,6 +56,34 @@ router.post('/webhook', function (req, res) {
   }
 });
 
+router.get('/setpersistencemenu', (req, res) => {
+  messageData = {
+  setting_type : "call_to_actions",
+  thread_state : "existing_thread",
+  call_to_actions:[
+    {
+      type:"web_url",
+      title:"View blog",
+      url:"http://aravindvasudevan.me/blog/"
+    },
+    {
+      type:"postback",
+      title:"Random Article",
+      payload:"Random Article"
+    }
+  ]
+}
+  request({
+    uri: 'https://graph.facebook.com/v2.6/me/thread_settings',
+    qs: { access_token: process.env.FB_ACCESS_TOKEN },
+    method: 'POST',
+    json: messageData
+
+  }, function (error, response, body) {
+      console.log(body);
+  });
+});
+
 function receivedMessage(event) {
   var senderID = event.sender.id;
   var recipientID = event.recipient.id;
