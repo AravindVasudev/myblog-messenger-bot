@@ -153,10 +153,6 @@ function sendArticle(recipientId) {
               title:"Web Scraping 101 : Build a simple web scraper using PHP",
               image_url:"http://aravindvasudevan.me/public/images/web_scraping.jpg",
               subtitle:"First, we have to pull the content off the Wikipedia page...",
-              default_action: {
-                type: "web_url",
-                url: "http://aravindvasudevan.me/2017/01/13/web-scraping-101/",
-              },
               buttons:[
                 {
                   type:"web_url",
