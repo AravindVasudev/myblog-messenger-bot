@@ -141,7 +141,7 @@ function sendGenericMessage(recipientId) {
 function sendArticle(recipientId) {
   let messageData = {
     recipient:{
-      id:"USER_ID"
+      id: recipientId
     },
     message:{
       attachment:{
@@ -165,7 +165,8 @@ function sendArticle(recipientId) {
         }
       }
     }
-  }
+  };
+
   callSendAPI(messageData);
 }
 
