@@ -160,7 +160,31 @@ function sendArticle(recipientId) {
                   title:"read article"
                 }
               ]
-            }
+            },
+            {
+             title:"Web Scraping 101 (part 2): Build an Anna University Result Scraper",
+             image_url:"http://aravindvasudevan.me/public/images/auscraper_3.png",
+             subtitle:"This is the follow-up to Web Scraping 101: Build a simple web scraper using PHP. If you haven't seen it yet, I'd highly recommend you to read that before continuing...",
+             buttons:[
+               {
+                 type:"web_url",
+                 url:"http://aravindvasudevan.me/2017/01/13/web-scraping-101-part2/",
+                 title:"read article"
+               }
+             ]
+           },
+           {
+            title:"How to create a context menu using JQuery in 3 steps !",
+            image_url:"https://assets-cdn.github.com/images/icons/emoji/unicode/1f616.png",
+            subtitle:"ay Google Drive or WhatsApp web or any other web application with native feel, they all have one thing in common: A Context Menu...",
+            buttons:[
+              {
+                type:"web_url",
+                url:"http://aravindvasudevan.me/2016/12/08/How-to-create-a-context-menu/",
+                title:"read article"
+              }
+            ]
+          }
           ]
         }
       }
