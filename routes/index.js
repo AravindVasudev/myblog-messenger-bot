@@ -139,7 +139,7 @@ function sendGenericMessage(recipientId) {
 }
 
 function sendArticle(recipientId) {
-  let message = {
+  let messageData = {
     recipient:{
       id:"USER_ID"
     },
@@ -166,7 +166,7 @@ function sendArticle(recipientId) {
       }
     }
   }
-
+  callSendAPI(messageData);
 }
 
 function sendTextMessage(recipientId, messageText) {
