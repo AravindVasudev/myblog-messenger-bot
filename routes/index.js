@@ -139,6 +139,37 @@ function sendGenericMessage(recipientId) {
 }
 
 function sendArticle(recipientId) {
+  let message = {
+    recipient:{
+      id:"USER_ID"
+    },
+    message:{
+      attachment:{
+        type:"template",
+        payload:{
+          template_type:"generic",
+          elements:[
+             {
+              title:"Web Scraping 101 : Build a simple web scraper using PHP",
+              image_url:"http://aravindvasudevan.me/public/images/web_scraping.jpg",
+              subtitle:"First, we have to pull the content off the Wikipedia page...",
+              default_action: {
+                type: "web_url",
+                url: "http://aravindvasudevan.me/2017/01/13/web-scraping-101/",
+              },
+              buttons:[
+                {
+                  type:"web_url",
+                  url:"http://aravindvasudevan.me/2017/01/13/web-scraping-101/",
+                  title:"read article"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
 
 }
 
@@ -191,7 +222,10 @@ function receivedPostback(event) {
 
   // When a postback is called, we'll send a message back to the sender to
   // let them know it was successful
-  sendTextMessage(senderID, payload);
+  if(payload == 'article') {
+    sendArticle(senderID);
+  }
+  // sendTextMessage(senderID, payload);
 }
 
 module.exports = router;
